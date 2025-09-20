@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karta Gwarancyjna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.4;
+            background-color: #f9f9f9;
+        }
+        .document {
+            background: white;
+            padding: 30px;
+            border: 2px solid #333;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 3px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        .section {
+            margin-bottom: 25px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            background-color: #fafafa;
+        }
+        .section h2 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        .field {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .field label {
+            font-weight: bold;
+            min-width: 150px;
+            margin-right: 10px;
+        }
+        .field-value {
+            flex: 1;
+            padding: 5px;
+            border-bottom: 1px solid #333;
+            font-size: 14px;
+            min-height: 20px;
+            color: #666;
+        }
+        .warranty-period {
+            background-color: #fffacd;
+            border: 2px solid #daa520;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .exclusions {
+            background-color: #ffe4e1;
+            border-left: 4px solid #dc143c;
+        }
+        .procedure {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #333;
+        }
+        .signature {
+            text-align: center;
+            width: 45%;
+        }
+        .signature-line {
+            border-top: 1px solid #333;
+            margin-top: 50px;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <h1>KARTA GWARANCYJNA / WARUNKI GWARANCJI</h1>
+        
+        <div class="field">
+            <label>Numer Gwarancji:</label>
+            <div class="field-value">_________________________</div>
+        </div>
+
+        <div class="section">
+            <h2>1. Sprzedawca (Gwarant)</h2>
+            <div class="field">
+                <label>Nazwa / Imię i Nazwisko:</label>
+                <div class="field-value">_________________________________________________</div>
+            </div>
+            <div class="field">
+                <label>Adres:</label>
+                <div class="field-value">______________________________________________________</div>
+            </div>
+            <div class="field">
+                <label>Telefon / E-mail:</label>
+                <div class="field-value">______________________________________________________</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. Nabywca</h2>
+            <div class="field">
+                <label>Imię i Nazwisko:</label>
+                <div class="field-value">______________________________________________________</div>
+            </div>
+            <div class="field">
+                <label>Adres:</label>
+                <div class="field-value">______________________________________________________</div>
+            </div>
+            <div class="field">
+                <label>Telefon / E-mail:</label>
+                <div class="field-value">______________________________________________________</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. Przedmiot Gwarancji</h2>
+            <div class="field">
+                <label>Urządzenie:</label>
+                <div class="field-value">_____________________________________________________</div>
+            </div>
+            <div class="field">
+                <label>Numer Seryjny (S/N):</label>
+                <div class="field-value">__________________________________________________</div>
+            </div>
+            <div class="field">
+                <label>Data Sprzedaży:</label>
+                <div class="field-value">______________________________________________________</div>
+            </div>
+            <div class="field">
+                <label>Cena zakupu:</label>
+                <div class="field-value">_________ PLN</div>
+            </div>
+        </div>
+
+        <div class="warranty-period">
+            <h2>4. Okres i Zakres Gwarancji</h2>
+            <p>Sprzedawca udziela Nabywcy gwarancji jakości na sprawne działanie urządzenia na okres <strong>6 (sześciu) miesięcy</strong> od Daty Sprzedaży.</p>
+            <p>Gwarancja obejmuje wady fizyczne i usterki sprzętowe komponentów wewnętrznych laptopa (płyta główna, procesor, pamięć RAM, dysk, porty, klawiatura, ekran), które nie zostały spowodowane przez Nabywcę i uniemożliwiają normalne korzystanie z urządzenia.</p>
+        </div>
+
+        <div class="section exclusions">
+            <h2>5. Wyłączenia Gwarancji</h2>
+            <p><strong>Gwarancja nie obejmuje:</strong></p>
+            <ul>
+                <li>Baterii (akumulatora), która jest częścią eksploatacyjną o ograniczonej żywotności</li>
+                <li>Problemów z oprogramowaniem (system operacyjny, wirusy, sterowniki, programy zainstalowane przez Nabywcę)</li>
+                <li>Uszkodzeń mechanicznych (pęknięcia, zalania, upadki) oraz uszkodzeń powstałych w wyniku przepięć elektrycznych</li>
+                <li>Usterek powstałych w wyniku nieautoryzowanych prób naprawy, modyfikacji lub demontażu urządzenia</li>
+                <li>Wad kosmetycznych (rysy, przetarcia, odbarwienia), o których Nabywca został poinformowany przed zakupem</li>
+                <li>Normalnego zużycia eksploatacyjnego (np. zużycie klawiszy, wytarcie touchpada)</li>
+                <li>Uszkodzeń powstałych w wyniku działania sił wyższych (pożar, powódź, itp.)</li>
+                <li>Uszkodzeń wynikających z nieprawidłowego użytkowania niezgodnego z przeznaczeniem</li>
+            </ul>
+        </div>
+
+        <div class="section procedure">
+            <h2>6. Procedura Reklamacyjna</h2>
+            <ol>
+                <li><strong>Zgłoszenie reklamacji:</strong> W przypadku wystąpienia usterki objętej gwarancją, Nabywca zobowiązany jest niezwłocznie poinformować o tym Sprzedawcę drogą telefoniczną lub mailową, opisując dokładnie problem.</li>
+                <li><strong>Dostawa sprzętu:</strong> Sprzęt należy dostarczyć do Sprzedawcy w celu weryfikacji wraz z kartą gwarancyjną i dowodem zakupu. Koszty dostarczenia sprzętu ponosi Nabywca.</li>
+                <li><strong>Diagnoza i naprawa:</strong> Sprzedawca zobowiązuje się do przeprowadzenia diagnozy w ciągu 3 dni roboczych i naprawy lub wymiany wadliwego komponentu w terminie 14 dni roboczych od daty otrzymania sprzętu.</li>
+                <li><strong>Zwrot sprzętu:</strong> Koszty odesłania naprawionego lub wymienionego sprzętu do Nabywcy ponosi Sprzedawca. Termin gwarancji ulega przedłużeniu o czas naprawy.</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>7. Postanowienia Końcowe</h2>
+            <p>Niniejsza gwarancja nie wyłącza, nie ogranicza ani nie zawiesza uprawnień Nabywcy wynikających z przepisów o rękojmi za wady rzeczy sprzedanej zgodnie z Kodeksem Cywilnym.</p>
+            <p>Nabywca ma prawo wyboru między dochodzeniem roszczeń z tytułu rękojmi a dochodzeniem roszczeń z tytułu gwarancji.</p>
+        </div>
+
+        <div class="signatures">
+            <div class="signature">
+                <div class="signature-line">Podpis Sprzedawcy</div>
+            </div>
+            <div class="signature">
+                <div class="signature-line">Podpis Nabywcy</div>
+                <p style="font-size: 12px; margin-top: 10px;">(Oświadczam, że zapoznałem/am się z powyższymi warunkami gwarancji i je akceptuję.)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

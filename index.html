@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentacja Laptopów - Refurbished</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h1 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: #7f8c8d;
+            font-weight: 300;
+        }
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .document-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #3498db;
+        }
+        .document-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        .document-card.warranty {
+            border-left-color: #e74c3c;
+        }
+        .document-card.technical {
+            border-left-color: #2ecc71;
+        }
+        .document-card.return {
+            border-left-color: #f39c12;
+        }
+        .document-card.thanks {
+            border-left-color: #9b59b6;
+        }
+        .document-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .document-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        .document-description {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .document-features {
+            margin-bottom: 25px;
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            font-size: 14px;
+            color: #555;
+        }
+        .feature::before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .view-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-align: center;
+            width: 100%;
+        }
+        .view-button:hover {
+            background: linear-gradient(135deg, #2980b9, #1f6391);
+            transform: translateY(-2px);
+        }
+        .warranty .view-button {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+        .warranty .view-button:hover {
+            background: linear-gradient(135deg, #c0392b, #a93226);
+        }
+        .technical .view-button {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
+        .technical .view-button:hover {
+            background: linear-gradient(135deg, #27ae60, #229954);
+        }
+        .return .view-button {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+        }
+        .return .view-button:hover {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+        }
+        .thanks .view-button {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+        }
+        .thanks .view-button:hover {
+            background: linear-gradient(135deg, #8e44ad, #7d3c98);
+        }
+        .info-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        .info-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 28px;
+        }
+        .info-content {
+            color: #555;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .warranty-highlight {
+            background: linear-gradient(135deg, #ff6b6b, #ffa726);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            .document-card {
+                padding: 20px;
+            }
+            .documents-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📱 Dokumentacja Laptopów Refurbished</h1>
+            <p class="subtitle">Kompleksowa dokumentacja dla odnowionych laptopów - Gwarancja, Certyfikaty, Prawa Konsumenta</p>
+        </header>
+
+        <div class="documents-grid">
+            <div class="document-card warranty">
+                <div class="document-icon">📋</div>
+                <h3 class="document-title">Karta Gwarancyjna</h3>
+                <p class="document-description">Oficjalny dokument gwarancyjny zawierający warunki 6-miesięcznej gwarancji na urządzenie i wszystkie przeprowadzone prace serwisowe.</p>
+                <div class="document-features">
+                    <div class="feature">6 miesięcy gwarancji na sprzęt</div>
+                    <div class="feature">Pokrycie usterek sprzętowych</div>
+                    <div class="feature">Procedura reklamacyjna</div>
+                    <div class="feature">Wyłączenia z gwarancji</div>
+                </div>
+                <a href="#" class="view-button" onclick="alert('Przykład: Karta Gwarancyjna - Zobacz pierwszy artifact')">Zobacz Kartę Gwarancyjną</a>
+            </div>
+
+            <div class="document-card technical">
+                <div class="document-icon">🔧</div>
+                <h3 class="document-title">Paszport Techniczny</h3>
+                <p class="document-description">Szczegółowa dokumentacja techniczna opisująca wszystkie wykonane prace serwisowe, testy oraz certyfikację urządzenia.</p>
+                <div class="document-features">
+                    <div class="feature">Pełna specyfikacja urządzenia</div>
+                    <div class="feature">Lista przeprowadzonych serwisów</div>
+                    <div class="feature">Wyniki testów wydajności</div>
+                    <div class="feature">Certyfikacja technika</div>
+                </div>
+                <a href="#" class="view-button" onclick="alert('Przykład: Paszport Techniczny - Zobacz drugi artifact')">Zobacz Paszport Techniczny</a>
+            </div>
+
+            <div class="document-card return">
+                <div class="document-icon">↩️</div>
+                <h3 class="document-title">Prawo do Zwrotu</h3>
+                <p class="document-description">Informacje o prawach konsumenta dotyczących możliwości odstąpienia od umowy w ciągu 14 dni zgodnie z polskim prawem.</p>
+                <div class="document-features">
+                    <div class="feature">14 dni na zwrot bez podania przyczyny</div>
+                    <div class="feature">Procedura dla platform (Allegro, OLX)</div>
+                    <div class="feature">Wzór formularza zwrotu</div>
+                    <div class="feature">Warunki i wyłączenia</div>
+                </div>
+                <a href="#" class="view-button" onclick="alert('Przykład: Prawo do Zwrotu - Zobacz trzeci artifact')">Zobacz Prawo do Zwrotu</a>
+            </div>
+
+            <div class="document-card thanks">
+                <div class="document-icon">💝</div>
+                <h3 class="document-title">Podziękowanie</h3>
+                <p class="document-description">Elegancka kartka z podziękowaniem dla klienta, podkreślająca jakość świadczonych usług i profesjonalne podejście.</p>
+                <div class="document-features">
+                    <div class="feature">Personalne podziękowanie</div>
+                    <div class="feature">Informacje o wsparciu</div>
+                    <div class="feature">Kontakt serwisowy</div>
+                    <div class="feature">Profesjonalna prezentacja</div>
+                </div>
+                <a href="#" class="view-button" onclick="alert('Przykład: Podziękowanie - Zobacz czwarty artifact')">Zobacz Podziękowanie</a>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>🏆 O Naszych Laptopach Refurbished</h2>
+            <div class="info-content">
+                <p>Nasze laptopy przechodzą kompleksowy proces odnowienia (refurbishment), który obejmuje pełną diagnostykę, serwis techniczny, modernizację komponentów oraz gruntowne testy jakości. Każde urządzenie otrzymuje profesjonalną dokumentację i certyfikację.</p>
+                
+                <div class="warranty-highlight">
+                    ⭐ GWARANCJA 6 MIESIĘCY na wszystkie laptopy i przeprowadzone prace serwisowe ⭐
+                </div>
+                
+                <p>Wszystkie dokumenty prezentowane na tej stronie to przykłady rzeczywistej dokumentacji, którą otrzymują nasi klienci. Zawierają one pełne informacje o urządzeniu, przeprowadzonych pracach oraz prawach konsumenta.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 Dokumentacja Laptopów Refurbished | Przykłady dokumentów dla celów informacyjnych</p>
+        </footer>
+    </div>
+</body>
+</html>
